@@ -49,6 +49,9 @@ print(poly.geom_type)
 # Create an empty GeoDataFrame
 geo = None
 # YOUR CODE HERE 3
+geo =gpd.GeoDataFrame()
+geo['geometry']=None
+geo.loc[0,'geometry']=poly
 
 # CODE FOR TESTING YOUR SOLUTION
 
@@ -66,7 +69,7 @@ print(len(geo))
 
 # Plot the polygon. What shape is it :) ?
 # YOUR CODE HERE 4
-
+geo.plot()
 # What can you see on the map? :) 
 
 # - save the GeoDataFrame into a Shapefile called `'polygon.shp'`. 
@@ -75,7 +78,7 @@ print(len(geo))
 fp = 'polygon.shp'
 
 # YOUR CODE HERE 5
-
+geo.to_file(fp)
 # CODE FOR TESTING YOUR SOLUTION
 
 #Check if output file exists
